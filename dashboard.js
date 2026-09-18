@@ -1,14 +1,15 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded'), () => {
   const logoutButton = document.getElementById('logout');
-  const menuButton = document.getElementById('menu');
-  const nav = document.getElementById('sidebar');
+  const opciones = document.querySelectorAll('.sidebar nav ul li');
 
   logoutButton.addEventListener('click', () => {
     window.location.href = 'login.html';
   });
-  
-  menuButton.addEventListener('click', () => {
-    nav.classList.toggle('open'); 
-  });
 
-});
+  opciones.forEach((opcion) => {
+    opcion.addEventListener('click', (event) => {
+      opciones.forEach((item) => item.classList.remove('active'));
+      opcion.classList.add('active');
+    });
+  });
+}
