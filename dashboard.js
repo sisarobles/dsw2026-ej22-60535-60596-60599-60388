@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded'), () => {
+document.addEventListener('DOMContentLoaded', () => {
   const logoutButton = document.getElementById('logout');
   const opciones = document.querySelectorAll('.sidebar nav ul li');
 
@@ -12,4 +12,4 @@ document.addEventListener('DOMContentLoaded'), () => {
       opcion.classList.add('active');
     });
   });
-}
+});
