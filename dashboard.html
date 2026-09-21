@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Listado de Productos</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="dashboard_style.css">
   <script src="dashboard.js"></script>
@@ -11,32 +10,74 @@
 <body>
   <div class="dashboard-container">
     <header>
-      <span>Gestor de turnos</span>
       <div>
-        <button class="menu">&#9776;</button>
-        <button id="logout">Cerrar Sesión</button>
+        <button id="menuBtn" class="menu">&#9776;</button>
       </div>
     </header>
     <nav id="sidebar">
       <ul>
-        <li><a href="#">Panel</a></li>
+        <li><h4><strong>Admin Portal</strong></h4>
+        <p>Healthcare Management</p>
+        </li>
+        
+        <li><a href="#">▦ &nbsp; Panel</a></li>
+        <li>● &nbsp;Doctores</li>
+        <li>✚ &nbsp; Especialidades</li>
+        <li>⌕ &nbsp; Búsqueda de Pacientes</li>
       </ul>
+        <button id="logout">↪ &nbsp; Cerrar Sesión</button>
     </nav>
     <main>
-      <h1>Pacientes</h1>
+      <h1>Vista General de Gestión</h1>
+      <p>Configure el personal médico y las especialidades del departamento.</p>
+
+      <div class="acciones">
+        <button>+ Agregar Nuevo Doctor</button>
+        <button>+ Agregar Nueva Especialidad</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat-card">
+          <span class="stat-label">DOCTORES ACTIVOS</span>
+           <span class="stat-numero">124</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">ESPECIALIDADES ACTIVAS</span>
+          <span class="stat-numero">32</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">TURNOS CONFIRMADOS PARA HOY</span>
+          <span class="stat-numero">48</span>
+        </div>
+      </div>
+
+       <div class="tabla-header">
+        <h2>Directorio de Profesionales Médicos</h2>
+        <input type="text" id="buscadorDoctores" placeholder="Buscar por nombre...">
+       </div>
       <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Paciente</th>
+            <th>Nombre del Doctor</th>
+            <th>Especialidad</th>
+            <th>Estado de Disponibilidad</th>
+            <th>Acciones</th>
           </tr>
         </thead>
-        <tbody id="product-table-body">
+        <tbody id="tablaDoctores">
           <!-- Los productos se cargarán aquí dinámicamente -->
         </tbody>
       </table>
+      <div class="tabla-footer">
+      <span>Mostrando 1 a 3 de 124 resultados</span>
+
+       <div>
+        <button>&lt;</button>
+        <button>&gt;</button>
+       </div>
+      </div>
     </main>
-    <footer>Mi Aplicación &copy; 2024</footer>
+   <!--footer>Mi Aplicación &copy; 2024</footer-->
   </div>
 </body>
 </html>

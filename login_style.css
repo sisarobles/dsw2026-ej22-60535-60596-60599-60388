@@ -1,9 +1,10 @@
-.login-container {
+.login-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(#1b1b5d, hsl(240, 55%, 39%), #1b1b5d);
 }
 
 .login-container form {
@@ -16,8 +17,79 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+h1{
+  color: white;
+}
+
+.fields{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0 0 10px; 
+}
+
+#password
+{
+   background-color:aliceblue;
+   border-radius: 5px;
+    padding: 8px; 
+    margin: 0 0 10px; 
+}
+
+#username
+{
+  background-color:aliceblue;
+    border-radius: 5px;
+   padding: 8px; 
+}
+
+#btnInicioSesion{
+  background-color: #070787;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+}
+
+.bienvenida
+{
+  color: #070787;
+  margin: 0;
+}
+
+.Inicio p{
+  margin: 0 0 20px;
+}
+
+.Inicio{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.aviso
+{
+  background-color: hsl(208, 100%, 92%);
+  padding: 15px 30px;
+  margin: 20px -32px -32px -32px;
+  border-radius: 0 0 8px 8px;
+}
+
+.login-logo
+{
+   width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 18px;
+}
+
 @media screen and (min-width: 600px) {
-  .login-container {
+  .login-body {
     align-items: center;
   }
 

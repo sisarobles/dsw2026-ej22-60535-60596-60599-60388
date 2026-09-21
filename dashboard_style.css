@@ -9,13 +9,41 @@
   height: 100dvh;
 }
 
+body{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f8fb;
+  color: #0b2b50;
+}
+
 .dashboard-container nav {
+  
+  display: flex;
+  flex-direction: column;
+
   position: absolute;
   top: 0;
   bottom: 0;
   width: 200px;
-  background-color: #f4f4f4;
+  background-color: #f5f8fb;
   left: -200px;
+  border-right: 1px solid #d9e1e8;
+
+  #logout{
+    padding: 1rem;
+    margin-top: 220%;
+    border: none;
+    background-color: transparent;
+    color: #163b5c;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+}
+
+.dashboard-container nav.open
+{
+  left: 0px;
 }
 
 .dashboard-container nav ul {
@@ -26,7 +54,34 @@
 
 .dashboard-container nav ul li {
   padding: 1rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: none;
+}
+
+.dashboard-container nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+.dashboard-container nav ul li:first-child h4 {
+  margin-bottom: 5px;
+  color: #0b2b50;
+  font-size: 1rem;
+}
+
+.dashboard-container nav ul li:first-child p {
+  margin-top: 0;
+  font-size: 0.7rem;
+  color: #607080;
+}
+
+.dashboard-container nav ul li:not(:first-child) {
+  color: #163b5c;
+  font-size: 0.9rem;
+}
+
+.dashboard-container nav ul li:nth-child(2) {
+  background-color: white;
+  color: #008f83;
+  border-left: 3px solid #00a896;
 }
 
 .dashboard-container header {
@@ -48,8 +103,19 @@
 
 .dashboard-container main {
   grid-area: main;
-  padding: 1rem;
+  padding: 2rem;
   overflow-y: auto;
+}
+
+.dashboard-container main h1{
+  color: #0b2b50;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-container main > p {
+  color: #333;
+  margin-top: 0;
 }
 
 .dashboard-container footer {
@@ -60,13 +126,180 @@
   padding: 1rem;
 }
 
+.acciones
+{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px;
+
+  button{
+    padding: 12px 20px;
+    background-color: #07558c;
+    color: white;
+    border: 1px solid #07558c;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+}
+
+.acciones button:nth-child(2) {
+  background-color: white;
+  color: #07558c;
+}
+
+.stats
+{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card
+{
+  flex: 1;
+  background-color: white;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d5dde5;
+  border-radius: 7px;
+  min-height: 90px;
+}
+
+.stat-numero
+{
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0b2b50;
+  margin-top: 0.5rem;
+}
+
+.stat-label
+{
+  color: #1f2933;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.tabla-header
+{
+  display: flex;
+  padding: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  color:  #0b2b50;
+  border: 1px solid #d5dde5;
+  border-bottom: none;
+  border-radius: 7px 7px 0 0;
+}
+
+.tabla-header h2{
+  margin: 0;
+  font-size: 1.1rem;
+  color: #0b2b50;
+}
+
+table
+{
+  width: 100%;
+  background-color: white;
+  border-collapse: collapse;
+  border: 1px solid #d5dde5;
+  border-radius: 0 0 7px 7px;
+  overflow: hidden;
+}
+
+table thead{
+  background-color: #e4f3fa;
+}
+
+table th
+{
+  text-align: left;
+  padding: 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1f2933;
+  border-bottom: 1px solid #cbd5df;
+}
+
+table td{
+  padding: 1rem 0.8rem;
+  border-bottom: 1px solid #d5dde5;
+  color: #1f2933;
+  font-size: 0.85rem;
+}
+
+table tbody tr:hover{
+  background-color: #f8fafc;
+}
+#buscadorDoctores{
+  background-color: #e4f3fa;
+  border: 1px solid #cbd5df;
+  border-radius: 5px;
+  padding: 0.7rem;
+  width: 180px;
+  font-size: 0.8rem;
+}
+
+.estado
+{
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.estado.activo
+{
+  background-color: #e5f7f2;
+  color: #008f83;
+}
+
+.estado.licencia
+{
+  background-color: #fff5d9;
+  color: #b77900;
+}
+
+.tabla-footer
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  background-color: #e4f3fa;
+  border: 1px solid #d5dde5;
+  border-top: none;
+  border-radius: 0 0 7px 7px;
+  color: #536574;
+  font-size: 0.7rem;
+}
+
+.tabla-footer button
+{
+  width: 30px;
+  height: 30px;
+  margin-left: 0.3rem;
+  border: 1px solid #cbd5df;
+  background-color: white;
+  color: #07558c;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 600px) {
   .dashboard-container {
     grid-template-columns: 200px 1fr;
+    grid-template-rows: 1fr;
     grid-template-areas: 
-      "header header"
-      "nav main"
-      "footer footer";
+      "nav main";
   }
 
   .dashboard-container nav {
@@ -77,6 +310,10 @@
   }
 
   .dashboard-container header div .menu {
+    display: none;
+  }
+
+  .dashboard-container header{
     display: none;
   }
 }

@@ -9,16 +9,38 @@
 
   <script src="login.js"></script>
 </head>
-<body>
+<body class="login-body">
+<img src="C:\Facultad\Tercer año\Desarrollo de SW\Segundo Cuatrimestre\Ejercicio_22\LogoMedPortal.png" alt="Logo MedPortal" class="login-logo">
+
+  <h1>MedPortal</h1>
+
   <div class="login-container">
     <form>
-      <label for="username">Usuario:</label>
-      <input type="text" id="username" name="username" required>
-      <br>
-      <label for="password">Contraseña:</label>
+
+      <div class="Inicio">
+      <h4 class="bienvenida">Bienvenido de nuevo</h4>
+      <p>Por favor, autentíquese para acceder al portal de proveedores.</p>
+      </div>
+
+      <div class="fields">
+      <div class="field">
+      <label for="username">Nombre de usuario</label>
+      <input type="text" id="username" name="username" placeholder="Ingrese ID de admin" required>
+      </div>
+
+      <div class="field">
+      <label for="password">Contraseña</label>
       <input type="password" id="password" name="password" required>
-      <br>
-      <button type="submit">Iniciar Sesión</button>
+      </div>
+      </div>
+
+      <button type="submit" id="btnInicioSesion">Iniciar Sesión</button>
+
+      <div class="aviso">
+        <p><strong>Solo Acceso Seguro:</strong> Este sistema es para personal médico autorizado.
+        Los intentos de acceso no autorizados son registrados y monitoreados para su cumplimiento.
+        </p>
+      </div>
     </form>
   </div>
 </body>
