@@ -1,18 +1,31 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form');
-    
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        
-        // Aquí puedes agregar la lógica para validar el usuario y la contraseña
-        if(username === 'admin' && password === 'password') {
-            // Redirigir a la página de productos o dashboard
-            window.location.href = 'dashboard.html';
-        } else {
-            alert('Usuario o contraseña incorrectos');
-        }
-    });
+const formulario =
+    document.getElementById("login-form");
+
+const inputUsuario =
+    document.getElementById("usuario");
+
+const inputPassword =
+    document.getElementById("contraseña");
+
+formulario.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+    console.log("Submit ejecutado");
+
+    const usuario =
+        inputUsuario.value;
+    const password =
+        inputPassword.value;
+
+    if (
+        usuario === "admin" &&
+        password === "password"
+    ) {
+        window.location.href =
+            "dashboard.html";
+    } else {
+        alert(
+            "Usuario o contraseña incorrectos"
+        );
+    }
 });
