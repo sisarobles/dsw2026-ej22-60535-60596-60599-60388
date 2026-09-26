@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-const specialtyButton = document.getElementById("plus");
+const specialtyButton = document.getElementById("shapes");
 
 if (specialtyButton) {
     specialtyButton.addEventListener("click", function () {
