@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de Productos</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="listado-especialidad.css">
+  <script src="dashboard.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <div class="dashboard-container">
+
+    <aside class="sidebar">
+      <nav id="nav">
+        <div class="brand">
+          <h1>Admin Portal</h1>
+          <p>Healthcare Management</p>
+        </div>
+        <ul>
+          <li>
+            <a href="dashboard.html">
+              <i data-lucide="layout-dashboard"></i>
+              Panel
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i data-lucide="briefcase-medical"></i>
+              Doctores
+            </a>
+          </li>
+          <li class="active">
+            <a href="#">
+              <i data-lucide="shapes"></i>
+              Especialidades
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i data-lucide="user-round-search"></i>
+              Búsqueda de Pacientes
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <footer>
+        <button type="button" id="settings">
+          <i data-lucide="settings"></i>
+            Configuración
+        </button>
+        <button type="button" id="logout">
+          <i data-lucide="log-out"></i>
+            Cerrar Sesión
+        </button>
+        <div class="footer-info">
+          <img src="images/perfil-admin.jpg" alt="Foto de perfil">
+          <div class="footer-text">
+            <h2>...</h2>
+            <p>Administradora Jefe</p>
+          </div>
+        </div>
+      </footer>
+    </aside>
+
+    <main>
+  <div class="main-header">
+
+    <div>
+        <h1>Directorio de Especialidades</h1>
+        <p>Administre las categorías médicas, servicios y disponibilidad del personal especializado</p>
+    </div>
+
+    <div class="header-actions">
+
+        <div class="search">
+        <i data-lucide="search"></i>
+        <input type="text" id="search-speciality" placeholder="Buscar especialidad...">
+        </div>
+
+        <div class="main-button">
+        <button type="button" id="plus">
+            <i data-lucide="plus"></i>
+            Nueva Especialidad
+        </button>
+        </div>
+
+    </div>
+
+    </div>
+
+      <section class="speciality-directory">
+    
+        <table class="directory-table">
+          <thead>
+            <tr>
+              <th>Nombre de la Especialidad</th>
+              <th>Descripción</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="especialidad-list">
+            <tr>
+              <td>
+                <div class="speciality-info">
+                    <i data-lucide="heart-pulse"></i>
+                  <span>Cardiología</span>
+                </div>
+              </td>
+              <td>Estudio y tratamiento de transtornos del corazón y del sistema circulatorio.</td>
+              <td><span class="status active">Activo</span></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="speciality-info">
+                    <i data-lucide="brain"></i>
+                  <span>Neurología</span>
+                </div>
+              </td>
+              <td>Diagnóstico y tratamiento de todas las categorías de afecciones cerebrales.</td>
+              <td><span class="status active">Activo</span></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="speciality-info">
+                <i data-lucide="hand"></i>
+                  <span>Dermatología</span>
+                </div>
+              </td>
+              <td>Atención integral de enfermedades de la piel, uñas y cabello.</td>
+              <td><span class="status on-leave">Inactivo</span></td>
+              <td></td>
+            </tr>
+
+             <tr>
+              <td>
+                <div class="speciality-info">
+                 <i data-lucide="baby"></i>
+                  <span>Pediatría</span>
+                </div>
+              </td>
+              <td>Cuidado médico de lactantes, niños y adolescentes</td>
+              <td><span class="status on-leave">Activo</span></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+
+        <section class="summary-cards">
+        <div class="summary-card doctors">
+          <div class="card-top">
+            <i data-lucide="briefcase-medical"></i>
+            <span>+4 este mes</span>
+          </div>
+          <p>Doctores Activos</p>
+          <strong>124</strong>
+        </div>
+
+        <div class="summary-card specialties">
+          <div class="card-top">
+            <i data-lucide="layout-grid"></i>
+            <span>Estable</span>
+          </div>
+          <p>Especialidades Activas</p>
+          <strong>32</strong>
+        </div>
+
+        <div class="summary-card appointments">
+          <div class="card-top">
+            <i data-lucide="calendar-check"></i>
+            <span>Hoy</span>
+          </div>
+          <p>Turnos Confirmados para hoy</p>
+          <strong>48</strong>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>
