@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Especialidad | Portal Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard_style.css">
+    <link rel="stylesheet" href="agregar-especialidad.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav id="nav">
+                <div class="brand">
+                    <h1>Admin Portal</h1>
+                    <p>Healthcare Management</p>
+                </div>
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <i data-lucide="layout-dashboard"></i>
+                            Panel
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-lucide="briefcase-medical"></i>
+                            Doctores
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <i data-lucide="shapes"></i>
+                            Especialidades
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-lucide="user-round-search"></i>
+                            Búsqueda de Pacientes
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <button type="button" id="settings">
+                    <i data-lucide="settings"></i>
+                    Configuración
+                </button>
+                <button type="button" id="logout">
+                    <i data-lucide="log-out"></i>
+                    Cerrar Sesión
+                </button>
+                <div class="footer-info">
+                    <img src="images/perfil-admin.jpg" alt="Foto de perfil">
+                    <div class="footer-text">
+                        <h2>...</h2>
+                        <p>Administradora Jefe</p>
+                    </div>
+                </div>
+            </footer>
+        </aside>
+        <main>
+            <header class="main-header">
+                <p class="breadcrumb">Especialidades &gt; Agregar Nueva Especialidad</p>
+                <h1>Registrar Nueva Especialidad</h1>
+                <p class="page-description">Complete la información técnica y administrativa para dar de alta una especialidad médica en el sistema hospitalario.</p>
+            </header>
+            <form class="specialty-form" id="specialty-form">
+                <div class="form-group">
+                    <label for="especialidad">Nombre de la Especialidad</label>
+                    <input type="text" name="especialidad" id="especialidad" placeholder="Ej. Cardiología intervencionista" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea name="descripcion" id="descripcion" placeholder="Detalle el alcance de la especialidad, procedimientos principales y requisitos de derivación." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado inicial</label>
+                    <select name="estado" id="estado">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" id="cancel">Cancelar</button>
+                    <button type="submit" class="btn-save">Guardar Especialidad</button>
+                </div>
+            </form>
+        </main>
+    </div>
+    <script src="agregar-especialidad.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
