@@ -1,14 +1,25 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
-    
-    form.addEventListener('submit', function(event) {
+    const togglePassword = document.getElementById('toggle-password');
+    const password = document.getElementById('password');
+
+    if (togglePassword) {
+        togglePassword.addEventListener('click', function () {
+            if (password.type === 'password') {
+                password.type = 'text';
+            } else {
+                password.type = 'password';
+            }
+        });
+    }
+
+    form.addEventListener('submit', function (event) {
         event.preventDefault();
-        
+
         const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        
+        const passwordValue = password.value;
         // Aquí puedes agregar la lógica para validar el usuario y la contraseña
-        if(username === 'admin' && password === 'password') {
+        if (username === 'admin' && passwordValue === 'password') {
             // Redirigir a la página de productos o dashboard
             window.location.href = 'dashboard.html';
         } else {
