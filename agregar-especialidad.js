@@ -6,6 +6,7 @@ const cancelButton = document.getElementById("cancel");
 const logoutButton = document.getElementById("logout");
 
 form.addEventListener("submit", function (event) {
+
     event.preventDefault();
 
     const nombre = nombreInput.value;
@@ -13,20 +14,40 @@ form.addEventListener("submit", function (event) {
     const estado = estadoSelect.value;
 
     const nuevaEspecialidad = {
-        nombre,
-        descripcion,
-        estado
+        id: crypto.randomUUID(),
+        nombre: nombre,
+        descripcion: descripcion,
+        estado: estado
     };
 
-    const especialidades = JSON.parse(localStorage.getItem("especialidades")) || [];
+    const datos = localStorage.getItem("specialties");
+
+    let especialidades = [];
+
+    if (datos) {
+        especialidades = JSON.parse(datos);
+    }
+
     especialidades.push(nuevaEspecialidad);
-    localStorage.setItem("especialidades", JSON.stringify(especialidades));
+
+    localStorage.setItem(
+        "specialties",
+        JSON.stringify(especialidades)
+    );
+
+    window.location.href = "listado-especialidad.html";
 });
+
 
 cancelButton.addEventListener("click", function () {
-    window.location.href = "specialties.html";
+
+    window.location.href = "listado-especialidad.html";
+
 });
 
+
 logoutButton.addEventListener("click", function () {
+
     window.location.href = "login.html";
+
 });
