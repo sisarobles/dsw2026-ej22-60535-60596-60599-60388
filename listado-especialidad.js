@@ -374,14 +374,14 @@ document.addEventListener(
 
 
         const buscador =
-            document.querySelector(
-                "#search-speciality"
-            );
+        document.querySelector("#search-speciality");
 
+        const botonBuscar =
+        document.querySelector("#search-button");
 
-        buscador.addEventListener(
-            "input",
-            filtrarEspecialidades
+        botonBuscar.addEventListener(
+        "click",
+        filtrarEspecialidades
         );
 
 
