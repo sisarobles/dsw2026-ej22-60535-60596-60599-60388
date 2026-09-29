@@ -105,7 +105,7 @@
 
             </header>
 
-            <form class="specialty-form" id="specialty-form">
+            <form class="specialty-form" id="specialty-form" novalidate>
 
                 <div class="form-group">
 
@@ -118,8 +118,11 @@
                         name="especialidad"
                         id="especialidad"
                         placeholder="Ej. Cardiología intervencionista"
+                        maxlength="15"
                         required
                     >
+
+                    <p class="error-message" id="nombre-error"></p>
 
                 </div>
 
@@ -133,8 +136,11 @@
                         name="descripcion"
                         id="descripcion"
                         placeholder="Detalle el alcance de la especialidad, procedimientos principales y requisitos de derivación."
+                        maxlength="100"
                         required
                     ></textarea>
+
+                    <p class="error-message" id="descripcion-error"></p>
 
                 </div>
 
