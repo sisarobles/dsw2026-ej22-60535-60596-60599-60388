@@ -9,18 +9,13 @@ const especialidadesPorPagina = 5;
 
 function cargarEspecialidades() {
 
-    const datos = localStorage.getItem("specialties");
+    const specialtiesGuardadas = obtenerEspecialidades();
 
-    if (datos) {
+    specialtiesGuardadas.forEach(function (specialty) {
 
-        const specialtiesGuardadas = JSON.parse(datos);
+        specialties.push(specialty);
 
-        specialtiesGuardadas.forEach(function (specialty) {
-
-            specialties.push(specialty);
-
-        });
-    }
+    });
 
     listaActual = specialties;
 
@@ -335,46 +330,39 @@ function mostrarPaginacion(lista) {
 
 function filtrarEspecialidades() {
 
-    const buscador =
+       const buscador =
         document.querySelector("#search-speciality");
 
     const texto =
         buscador.value;
 
 
-    const datos =
-        localStorage.getItem("specialties");
+    const specialtiesGuardadas =
+        obtenerEspecialidades();
 
 
-    if (datos) {
+    const specialtiesFiltradas =
+        specialtiesGuardadas.filter(
+            function (specialty) {
 
-        const specialtiesGuardadas =
-            JSON.parse(datos);
+                return specialty.nombre
+                    .toLowerCase()
+                    .includes(
+                        texto.toLowerCase()
+                    );
 
-
-        const specialtiesFiltradas =
-            specialtiesGuardadas.filter(
-                function (specialty) {
-
-                    return specialty.nombre
-                        .toLowerCase()
-                        .includes(
-                            texto.toLowerCase()
-                        );
-
-                }
-            );
-
-
-        listaActual =
-            specialtiesFiltradas;
-
-        paginaActual = 1;
-
-        mostrarEspecialidades(
-            listaActual
+            }
         );
-    }
+
+
+    listaActual =
+        specialtiesFiltradas;
+
+    paginaActual = 1;
+
+    mostrarEspecialidades(
+        listaActual
+    );
 }
 
 
