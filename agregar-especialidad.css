@@ -60,6 +60,12 @@
     resize: vertical;
 }
 
+.error-message {
+    color: #c0392b;
+    font-size: 0.675rem;
+    margin: 0;
+}
+
 .form-actions {
     display: flex;
     justify-content: flex-end;
