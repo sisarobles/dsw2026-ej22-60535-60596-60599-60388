@@ -48,20 +48,7 @@ form.addEventListener("submit", function (event) {
 
     console.log(nuevaEspecialidad);
 
-    const datos = localStorage.getItem("specialties");
-
-    let especialidades = [];
-
-    if (datos) {
-        especialidades = JSON.parse(datos);
-    }
-
-    especialidades.push(nuevaEspecialidad);
-
-    localStorage.setItem(
-        "specialties",
-        JSON.stringify(especialidades)
-    );
+    agregarEspecialidad(nuevaEspecialidad);
 
     window.location.href = "listado-especialidad.html";
 });
