@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const specialtyButton = document.getElementById("shapes");
-specialtyButton.addEventListener("click", function () {
-    window.location.href = "agregar-especialidad.html";
-});
+
+if (specialtyButton) {
+    specialtyButton.addEventListener("click", function () {
+        window.location.href = "agregar-especialidad.html";
+    });
+}

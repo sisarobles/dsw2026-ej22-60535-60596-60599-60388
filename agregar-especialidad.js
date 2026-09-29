@@ -40,18 +40,30 @@ form.addEventListener("submit", function (event) {
     }
 
     const nuevaEspecialidad = {
-        nombre,
-        descripcion,
-        estado
+        id: crypto.randomUUID(),
+        nombre: nombre,
+        descripcion: descripcion,
+        estado: estado
     };
 
     console.log(nuevaEspecialidad);
 
-    const especialidades = JSON.parse(localStorage.getItem("especialidades")) || [];
+    const datos = localStorage.getItem("specialties");
+
+    let especialidades = [];
+
+    if (datos) {
+        especialidades = JSON.parse(datos);
+    }
 
     especialidades.push(nuevaEspecialidad);
 
-    localStorage.setItem("especialidades", JSON.stringify(especialidades));
+    localStorage.setItem(
+        "specialties",
+        JSON.stringify(especialidades)
+    );
+
+    window.location.href = "listado-especialidad.html";
 });
 
 cancelButton.addEventListener("click", function () {

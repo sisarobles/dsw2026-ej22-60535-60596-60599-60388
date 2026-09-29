@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Listado de Especialidades</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="listado-especialidad.css">
+
+  <script src="dashboard.js"></script>
+  <script src="listado-especialidad.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+  <div class="dashboard-container">
+
+    <aside class="sidebar">
+
+      <nav id="nav">
+
+        <div class="brand">
+          <h1>Admin Portal</h1>
+          <p>Healthcare Management</p>
+        </div>
+
+        <ul>
+
+          <li>
+            <a href="dashboard.html">
+              <i data-lucide="layout-dashboard"></i>
+              Panel
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i data-lucide="briefcase-medical"></i>
+              Doctores
+            </a>
+          </li>
+
+          <li class="active">
+            <a href="#">
+              <i data-lucide="shapes"></i>
+              Especialidades
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i data-lucide="user-round-search"></i>
+              Búsqueda de Pacientes
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <footer>
+
+        <button type="button" id="settings">
+          <i data-lucide="settings"></i>
+          Configuración
+        </button>
+
+        <button type="button" id="logout">
+          <i data-lucide="log-out"></i>
+          Cerrar Sesión
+        </button>
+
+        <div class="footer-info">
+
+          <img src="images/perfil-admin.jpg" alt="Foto de perfil">
+
+          <div class="footer-text">
+            <h2>...</h2>
+            <p>Administradora Jefe</p>
+          </div>
+
+        </div>
+
+      </footer>
+
+    </aside>
+
+
+    <main>
+
+      <div class="main-header">
+
+        <div>
+
+          <h1>Directorio de Especialidades</h1>
+
+          <p>
+            Administre las categorías médicas, servicios y disponibilidad
+            del personal especializado
+          </p>
+
+        </div>
+
+        <div class="header-actions">
+
+          <div class="search">
+
+            <input
+             type="text"
+             id="search-speciality"
+             placeholder="Buscar especialidad..."
+            >
+
+             <button type="button" id="search-button">
+            <i data-lucide="search"></i>
+            </button>
+
+          </div>
+
+          <div class="main-button">
+
+            <button type="button" id="plus">
+
+              <i data-lucide="plus"></i>
+
+              Nueva Especialidad
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <section class="speciality-directory">
+
+        <table class="directory-table">
+
+          <thead>
+
+            <tr>
+
+              <th>Nombre de la Especialidad</th>
+
+              <th>Descripción</th>
+
+              <th>Estado</th>
+
+              <th>Acciones</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody id="especialidad-list">
+
+          </tbody>
+
+        </table>
+
+
+        <div class="directory-footer">
+
+          <p id="pagination-info">
+            Mostrando 0-0 de 0 especialidades
+          </p>
+
+          <div id="paginacion" class="pagination">
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <section class="summary-cards">
+
+        <div class="summary-card total-specialties">
+
+          <div class="card-content">
+
+            <p>TOTAL ESPECIALIDADES</p>
+
+            <strong>24</strong>
+
+            <span> +2 este trimestre</span>
+
+          </div>
+
+          <div class="card-icon">
+            <i data-lucide="list"></i>
+          </div>
+
+        </div>
+
+
+        <div class="summary-card most-demanded">
+
+          <div class="card-content">
+
+            <p>MÁS DEMANDADA</p>
+
+            <strong>Cardiología</strong>
+
+            <span>15% incremento en citas</span>
+
+          </div>
+
+          <div class="card-icon">
+            <i data-lucide="heart"></i>
+          </div>
+
+        </div>
+
+
+        <div class="summary-card new-specialties">
+
+          <div class="card-content">
+
+            <p>NUEVAS ESTE MES</p>
+
+            <strong>03</strong>
+
+            <span>Psicología, Nutrición...</span>
+
+          </div>
+
+          <div class="card-icon">
+            <i data-lucide="settings"></i>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+
+</html>
